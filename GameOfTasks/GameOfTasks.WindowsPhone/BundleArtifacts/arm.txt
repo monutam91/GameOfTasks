@@ -1,0 +1,4 @@
+MainPackage=E:\Private\Egyetem\Msc\Szakdoga\GameOfTasks\GameOfTasks\GameOfTasks.WindowsPhone\bin\ARM\Release\GameOfTasks.WindowsPhone_1.1.0.2_Bundle\GameOfTasks.WindowsPhone_1.1.0.2_ARM.appx
+SymbolPackage=E:\Private\Egyetem\Msc\Szakdoga\GameOfTasks\GameOfTasks\GameOfTasks.WindowsPhone\AppPackages\GameOfTasks.WindowsPhone_1.1.0.2_Test\GameOfTasks.WindowsPhone_1.1.0.2_ARM.appxsym
+ResourcePack=E:\Private\Egyetem\Msc\Szakdoga\GameOfTasks\GameOfTasks\GameOfTasks.WindowsPhone\bin\ARM\Release\GameOfTasks.WindowsPhone_1.1.0.2_Bundle\GameOfTasks.WindowsPhone_1.1.0.2_language-hu.appx
+ResourcePack=E:\Private\Egyetem\Msc\Szakdoga\GameOfTasks\GameOfTasks\GameOfTasks.WindowsPhone\bin\ARM\Release\GameOfTasks.WindowsPhone_1.1.0.2_Bundle\GameOfTasks.WindowsPhone_1.1.0.2_scale-100.appx

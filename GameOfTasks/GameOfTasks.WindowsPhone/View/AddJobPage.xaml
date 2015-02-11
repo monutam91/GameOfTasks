@@ -1,0 +1,83 @@
+﻿<common:LayoutAwarePage
+    x:Class="GameOfTasks.View.AddJobPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:GameOfTasks.Common"
+    xmlns:behaviors="using:GameOfTasks.Behaviors"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding AddJob, Mode=OneWay, Source={StaticResource Locator}}">
+    <ScrollViewer HorizontalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0" Style="{StaticResource TitleStackPanelStyle}">
+                <TextBlock Style="{StaticResource TitleStyle}" x:Uid="AddJobPageTitle" />
+            </StackPanel>
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0" Style="{StaticResource InputContainerStyle}">
+                    <TextBlock x:Uid="PageTaskNameTextBlock" Style="{StaticResource FormFieldNameStyle}" />
+                    <TextBox x:Uid="PageTaskNameTextBox" Style="{StaticResource FormFieldInputStyle}"
+                         Text="{Binding TaskName, Mode=TwoWay}" />
+                    <TextBlock Style="{StaticResource FormFieldErrorStyle}"
+                           Text="{Binding ErrorMsg}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="1" Style="{StaticResource InputContainerStyle}">
+                    <TextBlock x:Uid="PageHardnessTextBlock" Style="{StaticResource FormFieldNameStyle}"/>
+                    <TextBox x:Uid="PageHardnessTextBox" Style="{StaticResource NumericInputStyle}" 
+                         Text="{Binding Points, Mode=TwoWay}" >
+                        <interactivity:Interaction.Behaviors>
+                            <behaviors:NumericTextBoxBehavior />
+                        </interactivity:Interaction.Behaviors>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Grid.Column="0" Grid.Row="2" Style="{StaticResource InputContainerStyle}">
+                    <TextBlock x:Uid="PageTaskNotifyTimeTextBlock" Style="{StaticResource FormFieldNameStyle}"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <CheckBox Style="{StaticResource NotifyTimeCheckBoxStyle}"
+                              IsChecked="{Binding IsHavingDueDate, Mode=TwoWay}"/>
+                        <DatePicker Date="{Binding NotifyDate, Mode=TwoWay}" MinYear="{Binding MinYear}"
+                                IsEnabled="{Binding IsHavingDueDate}"/>
+                        <TimePicker Time="{Binding NotifyTime, Mode=TwoWay}"
+                                IsEnabled="{Binding IsHavingDueDate}"/>
+                    </StackPanel>
+                </StackPanel>
+                <Grid Grid.Column="0" Grid.Row="3" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="PageDescriptionTextBlock" Style="{StaticResource FormFieldNameStyle}"/>
+                    <StackPanel Grid.Column="0" Grid.Row="1" Style="{StaticResource InputContainerStyle}">
+                        <TextBox x:Uid="PageDescriptionTextBox"
+                             Style="{StaticResource DescriptionTextBoxStyle}"
+                             Text="{Binding Description, Mode=TwoWay}"/>
+                    </StackPanel>
+                </Grid>
+                <Button Grid.Column="0" Grid.Row="4" x:Uid="AddJobPageCreateTaskButton" Command="{Binding CreateTaskCommand}"
+                    HorizontalAlignment="Center"
+                    IsEnabled="{Binding ErrorMsg, Converter={StaticResource ErrorMsgToBooleanConverter}}" />
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</common:LayoutAwarePage>

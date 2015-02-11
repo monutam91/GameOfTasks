@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>1693920b-1bb5-4650-804f-a5c23dc3530b</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GameOfTasks</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\NumericTextBoxBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\BackgroundAgentHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Interfaces\INavigator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Interfaces\IView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Interfaces\IViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\LayoutAwarePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Navigator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\PaymentHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AddJobViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DefaultViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\EditToDoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SettingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Asset\Icons\appbar.add.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Asset\Icons\appbar.check.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Asset\Icons\appbar.checkmark.pencil.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Asset\Icons\appbar.edit.box.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Asset\Icons\appbar.list.one.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Asset\Icons\appbar.man.suitcase.fast.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Asset\Icons\back-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-us\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\hu-hu\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)XAMLResources\SharedStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)XAMLResources\SharedResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:GameOfTasks.Converters">
+    
+    <converters:BoolToVisibilityConverter x:Name="BoolToVisibilityConverter"/>
+    <converters:TimeSpanToDoubleConverter x:Name="TimeSpanToDoubleConverter"/>
+    <converters:ErrorMsgToBooleanConverter x:Name="ErrorMsgToBooleanConverter"/>
+    <converters:DateTimeToDueDateConverter x:Name="DateTimeToDueDateConverter"/>
+    <converters:StringToVisibilityConverter x:Name="StringToVisibilityConverter"/>
+
+    <BitmapImage UriSource="../Asset/Icons/back-icon.png" x:Name="BackIcon"/>
+    <BitmapIcon x:Name="InProgressIcon" UriSource="../Asset/Icons/appbar.man.suitcase.fast.png"/>
+    <BitmapIcon x:Name="AddIcon" UriSource="../Asset/Icons/appbar.add.png"/>
+    <BitmapIcon x:Name="EditIcon" UriSource="../Asset/Icons/appbar.edit.box.png"/>
+    <BitmapIcon x:Name="ToDoIcon" UriSource="../Asset/Icons/appbar.checkmark.pencil.png"/>
+    <BitmapIcon x:Name="FinishedIcon" UriSource="../Asset/Icons/appbar.check.png"/>
+    
+</ResourceDictionary>
